@@ -23,15 +23,15 @@ class ListExamples {
   // and return a new list that has all the strings in both list in sorted order.
   static List<String> merge(List<String> list1, List<String> list2) { //taking 2 lists of strings
     List<String> result = new ArrayList<>(); //init empty answer arraylist
-    int index1 = 0, index2 = 0; //starting indices on both sorted lists =
-    while(index1 < list1.size() && index2 < list2.size()) {
-      if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
-        result.add(list1.get(index1));
-        index1 += 1;
+    int index1 = 0, index2 = 0; //starting indices on both sorted lists = 0
+    while(index1 < list1.size() && index2 < list2.size()) { //while curr index on both lists < size of both lists
+      if(list1.get(index1).compareTo(list2.get(index2)) < 0) { //if curr list1 < curr list 2
+        result.add(list1.get(index1)); //add curr list 1 to result
+        index1 += 1; //inc index by 1
       }
-      else {
-        result.add(list2.get(index2));
-        index2 += 1;
+      else { //if curr list1 >= curr list2
+        result.add(list2.get(index2)); //add curr list 2 to result
+        index2 += 1; //inc index by 1
       }
     }
     while(index1 < list1.size()) {
